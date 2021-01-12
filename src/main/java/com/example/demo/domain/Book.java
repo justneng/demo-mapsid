@@ -13,20 +13,22 @@ import java.util.Set;
 public class Book implements Serializable {
 
     @Id
-    private String isbn;
+    @SequenceGenerator(name = "BOOK_GENERATOR", sequenceName = "BOOK_GENERATOR_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "BOOK_GENERATOR", strategy = GenerationType.SEQUENCE)
+    private Long isbn;
 
     @Column
     private String title;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "book", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "book", cascade = {CascadeType.ALL})
     private Set<BookInfo> bookInfos;
 
-    public String getIsbn() {
+    public Long getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(Long isbn) {
         this.isbn = isbn;
     }
 

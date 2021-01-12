@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,13 +19,15 @@ import java.util.Set;
 public class BookInfoIT {
     @Autowired
     private BookRepo bookRepo;
+    @Autowired
+    EntityManager em;
 
     @Test
     @Transactional
     @Rollback(value = false)
     public void test() {
         Book book = theLordOfTheRings();
-        bookRepo.saveAndFlush(book);
+        em.merge(book);
     }
     private Book theLordOfTheRings() {
 
@@ -34,7 +37,7 @@ public class BookInfoIT {
         jrrTolkien.setName("J.R.R. TOLKIEN");
 
         Book theLordOfTheRings = new Book();
-        theLordOfTheRings.setIsbn("9780563528883");
+
         theLordOfTheRings.setTitle("The Lord of the Rings: The Trilogy");
 
         Genre genre = new Genre();

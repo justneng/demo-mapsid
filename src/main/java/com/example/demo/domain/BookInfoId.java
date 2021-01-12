@@ -7,22 +7,22 @@ import java.util.Objects;
 @Embeddable
 public class BookInfoId implements Serializable {
 
-    private String isbn;
+    private Long isbn;
     private Integer authorId;
 
     public BookInfoId() {
     }
 
-    public BookInfoId(String isbn, Integer authorId) {
+    public BookInfoId(Long isbn, Integer authorId) {
         this.isbn = isbn;
         this.authorId = authorId;
     }
 
-    public String getIsbn() {
+    public Long getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(Long isbn) {
         this.isbn = isbn;
     }
 
