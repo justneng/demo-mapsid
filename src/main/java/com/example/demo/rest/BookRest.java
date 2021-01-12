@@ -42,7 +42,7 @@ public class BookRest {
         Author jrrTolkien = authorRepo.findById(4).get();
 
         Book theLordOfTheRings = new Book();
-        theLordOfTheRings.setIsbn("9780563528883");
+
         theLordOfTheRings.setTitle("The Lord of the Rings: The Trilogy");
 
         Genre genre = new Genre();
@@ -68,7 +68,7 @@ public class BookRest {
         georgeRRMartin.setName("GEORGE R.R. MARTIN");
 
         Book aGameOfThrones = new Book();
-        aGameOfThrones.setIsbn("0-553-10354-7");
+
         aGameOfThrones.setTitle("A Game of Thrones");
 
         Genre genre = new Genre();

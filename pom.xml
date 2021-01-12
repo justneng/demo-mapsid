@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>demo-mapsid</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>demo-mapsid</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.4.27.Final</version>
+			<version>5.4.20.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
